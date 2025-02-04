@@ -9,7 +9,6 @@ import Cypher from './component/Cypher';
 import Navbar from './component/navbar';
 
 
-
 function App() {
   
 
@@ -18,7 +17,7 @@ function App() {
       <Routes>
         <Route path='' element={<Navbar />}>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/Incidents" element={<Incidents />} />
+          <Route path="/Incidents" element={<Incidents />} />   
           <Route path="/Locations" element={<Locations />} />
           <Route path="/Activities" element={<Activities />} />
           <Route path="/Documents" element={<Documents />} />

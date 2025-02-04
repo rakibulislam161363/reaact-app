@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Outlet, NavLink } from 'react-router-dom';
-import Nav from './navenext';
+import { Outlet, NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,11 +9,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="p-4 bg-[#E4E4E780]">
-      <div className="container mx-auto flex flex-wrap items-center justify-between ">
-        <NavLink to="/" className=" text-2xl font-bold mb-3">
+    <nav className="bg-[#E4E4E780]">
+      <div className=" mx-auto flex flex-wrap items-center justify-between border-b-2 p-2 border-[#E4E4E7]">
+        <Link to="/" className=" text-2xl font-bold mb-3">
           <img src="LOGO.png" alt="" />
-        </NavLink>
+        </Link>
         <button
           onClick={toggleMobileMenu}
           className="lg:hidden hover:text-gray-300"
@@ -39,9 +38,9 @@ const Navbar = () => {
             isMobileMenuOpen ? 'block' : 'hidden'
           } w-full lg:block lg:w-auto`}
         >
-          <div className='lg:flex block items-center gap-5'>
+          <div className="lg:flex block items-center gap-5">
             <ul className="text-base lg:flex lg:justify-between">
-              <li>
+              <li className='relative'>
                 <NavLink
                   to="/"
                   className="block py-2 px-2 lg:inline-block font-semibold"
@@ -97,7 +96,7 @@ const Navbar = () => {
                   src="notification.png"
                   alt=""
                 />
-                <div className="absolute w-2 h-2 bg-green-500 top-0 right-0 rounded-2xl z-10"></div>
+                <div className="absolute w-2 h-2 bg-green-500 top-0 right-0 rounded-2xl"></div>
               </div>
               <div className="flex items-center gap-2">
                 <div className="">
@@ -112,7 +111,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <Nav />
+      
       <Outlet />
     </nav>
   );
